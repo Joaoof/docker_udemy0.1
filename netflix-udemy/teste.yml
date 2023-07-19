@@ -4,18 +4,18 @@ services:
   frontend:
     depends_on: 
       - backend
-    build: ./frontend
+    build: ./frontend --> construir aparti do diretório frontend
     ports:
       - 3000:3000
 
   backend: 
     depends_on: 
       - db
-    build: ./backend
+    build: ./backend --> construir aparti do diretório backend
     ports: 
       - 3001:3001
     environment: 
-      DB_URL: mongodb://db/vidly
+      DB_URL: mongodb://db/vidly --> conexão do banco de dados no back end.
     command: ./docker-entrypoint.sh
 
   db:
